@@ -20,7 +20,7 @@ To get the application up and running:
   - pry
   - puma (~> 3.11)
   - rails (~> 5.2.0)
-  - rspec-rails
+  - rspec-rails (3.7.2)
   - sass-rails (~> 5.0)
   - shoulda-matchers
   - sqlite3
