@@ -1,13 +1,17 @@
-class PlantController < ApplicationController
-  before_action :set_plant, only: [:show]
+class PlantsController < ApplicationController
+  before_action :set_plant, only: [:show, :create]
 
   def index
     @plants = Plant.all
     json_response(@plants)
   end
 
+  def create
+    @plant = Plant.create!(plant_params)
+    json_response(@plant, :created)
+  end
+
   def show
-    @user = Plant.find(params[:id])
     json_response(@plant)
   end
 

@@ -26,7 +26,8 @@ describe 'Users API' do
     expect(response).to be_success
     parsed = JSON.parse(response.body, symbolize_names: true)
     expect(parsed[:name]).to eq(@user.name)
-    expect(parsed[:username]).to eq(@)
+    expect(parsed[:username]).to eq(@user.username)
+    expect(parsed[:password]). to eq nil
   end
 
   it "has a 201 status code" do

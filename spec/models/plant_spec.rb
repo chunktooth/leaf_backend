@@ -4,5 +4,5 @@ RSpec.describe Plant, type: :model do
  it { should validate_presence_of(:name) }
   it { should validate_presence_of(:sci_name) }
   it { should validate_presence_of(:img) }
-  it { should belongs_to(:user) }
+  it { should belong_to(:user) }
 end
