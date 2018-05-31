@@ -10,10 +10,9 @@ describe 'Users API' do
 
     expect(response).to be_success
     parsed = JSON.parse(response.body, symbolize_names: true)
-    
     expect(parsed[:name]).to eq(@user.name)
     expect(parsed[:username]).to eq(@user.username)
-    expect(parsed[:password]).to be_nil
+    expect(parsed[:password]). to eq nil
   end
 
   it "has a 200 status code" do
@@ -24,6 +23,19 @@ describe 'Users API' do
   it "POST /users" do
     post "/users"
     expect(response).to be_success
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed[:name]).to eq(@user.name)
+    expect(parsed[:username]).to eq(@)
+  end
+
+  it "has a 201 status code" do
+    post "/users"
+    expect(response.status).to eq(201)
+  end
+
+  it "DELETE /users" do
+    delete "/users"
+    expect(response.status).to eq(204)
   end
 
 end
@@ -31,3 +43,4 @@ end
 
 # GET /users
 # GET /users/:id
+
