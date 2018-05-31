@@ -22,6 +22,7 @@ describe 'Users API' do
 
   it "POST /users" do
     post "/users"
+
     expect(response).to be_success
     parsed = JSON.parse(response.body, symbolize_names: true)
     expect(parsed[:name]).to eq(@user.name)
@@ -34,7 +35,7 @@ describe 'Users API' do
   end
 
   it "DELETE /users" do
-    delete "/users"
+    delete "/users/#{@user.id}"
     expect(response.status).to eq(204)
   end
 
