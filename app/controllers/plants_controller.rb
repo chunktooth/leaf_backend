@@ -1,5 +1,5 @@
 class PlantsController < ApplicationController
-  before_action :set_plant, only: [:show, :create]
+  before_action :set_plant, only: [:show]
 
   def index
     @plants = Plant.all
@@ -7,8 +7,14 @@ class PlantsController < ApplicationController
   end
 
   def create
-    @plant = Plant.create!(plant_params)
-    json_response(@plant, :created)
+    user = User.find(params[:user_id])
+    plant = Plant.new(plant_params)
+    plant.user_id = user.id
+    if plant.save
+      json_response(plant, :created)
+    else
+      json_response({message: "Something went wrong"})
+    end
   end
 
   def show

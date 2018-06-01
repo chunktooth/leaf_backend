@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe 'Users API' do
-  before :each do  
+  before :each do
     @user = create(:user)
   end
 
@@ -21,18 +21,13 @@ describe 'Users API' do
   end
 
   it "POST /users" do
-    post "/users"
+    post users_path, params: {user: {name: "Opakawagalaga", username: "Eupanifahorious", password: "This is mah password"}}
 
     expect(response).to be_success
     parsed = JSON.parse(response.body, symbolize_names: true)
-    expect(parsed[:name]).to eq(@user.name)
-    expect(parsed[:username]).to eq(@user.username)
+    expect(parsed[:name]).to eq("Opakawagalaga")
+    expect(parsed[:username]).to eq("Eupanifahorious")
     expect(parsed[:password]). to eq nil
-  end
-
-  it "has a 201 status code" do
-    post "/users"
-    expect(response.status).to eq(201)
   end
 
   it "DELETE /users" do
@@ -45,4 +40,3 @@ end
 
 # GET /users
 # GET /users/:id
-
