@@ -31,11 +31,4 @@ class PlantsController < ApplicationController
     @plant = Plant.find(params[:id])
   end
 
-  # def plants
-  #   @resp = Faraday.get 'https://localhost:3000/users/:id/plants' do |req|
-  #     req.params['name'] = name
-  #     req.params['sci_name'] = sci_name
-  #     req.params['img'] = img
-  # end
-  # render 'search'
 end
