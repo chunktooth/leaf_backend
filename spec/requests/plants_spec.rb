@@ -12,7 +12,6 @@ describe 'Plants API' do
     expect(response).to be_success
     parsed = JSON.parse(response.body, symbolize_names: true)
     expect(parsed[:name]).to eq(@plant.name)
-    expect(parsed[:sci_name]).to eq(@plant.sci_name)
     expect(parsed[:img]).to eq(@plant.img)
   end
 
@@ -22,13 +21,12 @@ describe 'Plants API' do
   end
 
   it "POST /plants" do
-    plant = {plant: {name: "Opakawagalaga", sci_name: "Eupanifahorious", img: "URLHERE"}}
+    plant = {plant: {name: "Opakawagalaga", img: "URLHERE"}}
     post user_plants_path(@user), :params => plant
 
     expect(response).to be_success
     parsed = JSON.parse(response.body, symbolize_names: true)
     expect(parsed[:name]).to eq("Opakawagalaga")
-    expect(parsed[:sci_name]).to eq("Eupanifahorious")
     expect(parsed[:img]).to eq("URLHERE")
   end
 
