@@ -1,4 +1,4 @@
-# Leaf (Backend)
+# Leafy (Backend)
 [![Build Status](https://travis-ci.org/chunktooth/leaf_backend.svg?branch=begins)](https://travis-ci.org/chunktooth/leaf_backend)
 
 To get the application up and running:
