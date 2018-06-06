@@ -34,4 +34,4 @@ To get the application up and running:
 #### Database initialization
 #### To run the test suite ```bundle exec rspec``` or ```rspec```
 #### Services (job queues, cache servers, search engines, etc.)
-#### Deployment instructions
+#### Deployment instructions ```bundle install``` to install dependencies && ```rake``` to build
