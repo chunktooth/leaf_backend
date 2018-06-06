@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2018_05_31_215015) do
 
   create_table "plants", force: :cascade do |t|
-    t.string "sci_name"
     t.string "name"
     t.string "img"
     t.integer "user_id"
