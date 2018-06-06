@@ -1,4 +1,5 @@
-# README
+# Leaf (Backend)
+[![Build Status](https://travis-ci.org/chunktooth/leaf_backend.svg?branch=begins)](https://travis-ci.org/chunktooth/leaf_backend)
 
 To get the application up and running:
 
@@ -31,6 +32,6 @@ To get the application up and running:
 #### Configuration
 #### Database creation
 #### Database initialization
-#### To run the test suite ```bundle exec rspec```
+#### To run the test suite ```bundle exec rspec``` or ```rspec```
 #### Services (job queues, cache servers, search engines, etc.)
 #### Deployment instructions
