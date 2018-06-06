@@ -1,7 +1,5 @@
 language: ruby
 rvm:
  - 2.3.3
- - jruby
- - rbx-3
 notifications:
   email: false
